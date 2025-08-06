@@ -1,0 +1,46 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #20232a;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section, .skills, .projects, .certifications, .contact {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.resume-btn,
+.download-resume {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0077b6;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.resume-btn:hover,
+.download-resume:hover {
+  background-color: #023e8a;
+}

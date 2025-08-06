@@ -1,0 +1,58 @@
+.home {
+  text-align: center;
+  padding: 5rem 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.highlight {
+  color: #0077ff;
+}
+
+.typing {
+  font-family: monospace;
+  font-size: 1.5rem;
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0059b3;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}

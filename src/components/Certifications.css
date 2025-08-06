@@ -1,0 +1,64 @@
+.certifications-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f2f7ff;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.certifications-section h1 {
+  font-size: 2.5rem;
+  color: #0d1b2a;
+  margin-bottom: 1rem;
+}
+
+.certifications-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cert-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.cert-list li:hover {
+  transform: translateY(-3px);
+}
+
+.cert-list .icon {
+  color: #0077b6;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .certifications-section h1 {
+    font-size: 2rem;
+  }
+
+  .cert-list li {
+    font-size: 0.95rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
