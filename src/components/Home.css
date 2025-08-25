@@ -1,0 +1,243 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.home-content {
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: floatUpDown 6s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  50% { 
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 2rem;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) rotate(5deg);
+  border-color: var(--accent-color);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(245, 158, 11, 0.3);
+}
+
+.home-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideInLeft 1s ease-out;
+}
+
+.highlight {
+  color: var(--accent-color);
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: slideInRight 1s ease-out 0.2s both;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 2rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-color);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.intro-text strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.icons a,
+.icons svg {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.icons a:hover,
+.icons svg:hover {
+  color: var(--white);
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.react-icon:hover {
+  color: #61dbfb !important;
+  text-shadow: 0 0 20px rgba(97, 219, 251, 0.5);
+}
+
+.java-icon:hover {
+  color: #f89820 !important;
+  text-shadow: 0 0 20px rgba(248, 152, 32, 0.5);
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color), #f97316);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 0.8s both;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, #f97316, var(--accent-color));
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-content {
+    max-width: 95%;
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .icons a,
+  .icons svg {
+    font-size: 2rem;
+  }
+  
+  .resume-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .home-content h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .icons {
+    gap: 1rem;
+  }
+  
+  .icons a,
+  .icons svg {
+    font-size: 1.8rem;
+    padding: 0.4rem;
+  }
+}
