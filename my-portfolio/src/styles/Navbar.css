@@ -1,5 +1,4 @@
-/* Navbar Base Styles */
-nav {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +54,15 @@ nav {
   align-items: center;
   text-decoration: none;
   gap: 0.25rem;
+}
+@media (max-width: 768px) {
+  .navbar-logo-wrapper {
+    max-width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+  }
 }
 
 .navbar-logo-gradient {
@@ -211,6 +219,7 @@ nav {
 @media (min-width: 768px) {
   .navbar-mobile-controls {
     display: none !important;
+    flex-shrink: 0;
   }
 }
 
@@ -402,13 +411,13 @@ nav {
 }
 
 /* Responsive Design */
-@media (max-width: 479px) {
+@media (max-width: 640px) {
   .navbar-logo-gradient {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
   .navbar-logo-sub {
-    font-size: 1.125rem;
+    font-size: 1.15rem;
   }
 
   .navbar-mobile-link {

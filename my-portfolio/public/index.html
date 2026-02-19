@@ -5,6 +5,22 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('darkMode');
+          if (saved !== null) {
+            document.documentElement.classList.add(saved === 'true' ? 'dark' : 'light');
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="Web site created using create-react-app"

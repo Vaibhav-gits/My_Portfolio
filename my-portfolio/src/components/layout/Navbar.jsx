@@ -15,14 +15,12 @@ const Navbar = () => {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
       }
     } catch (e) {
-      // ignore and fallback to false
     }
     return false;
   });
 
   const { scrollY } = useScroll();
 
-  // Apply theme class to document root and persist
   useEffect(() => {
     try {
       if (darkMode) {
@@ -35,7 +33,6 @@ const Navbar = () => {
         localStorage.setItem("darkMode", "false");
       }
     } catch (e) {
-      // server or restricted environment: no-op
     }
   }, [darkMode]);
 
