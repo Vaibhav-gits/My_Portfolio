@@ -1,0 +1,464 @@
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Timeline Item Wrapper */
+.timeline-item-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+/* Timeline Item - Matching Hero Social Icon Style */
+.timeline-item {
+  position: relative;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(34, 211, 238, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2);
+}
+
+.light .timeline-item {
+  background: rgba(243, 244, 246, 0.8);
+  border-color: rgba(209, 213, 219, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.light .timeline-item:hover {
+  background: rgba(229, 231, 235, 0.8);
+  border-color: rgba(8, 145, 178, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Icon - Matching Hero Social Icons */
+.timeline-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #9ca3af !important;
+  transition: color 0.3s ease;
+}
+
+.timeline-icon::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.timeline-item:hover .timeline-icon {
+  background: #334155;
+  transform: scale(1.15);
+  border-color: rgba(34, 211, 238, 0.5);
+}
+
+.timeline-item:hover .timeline-icon svg {
+  color: #ffffff !important;
+}
+
+.timeline-item:hover .timeline-icon::before {
+  opacity: 0.4;
+}
+
+.light .timeline-icon {
+  background: rgba(243, 244, 246, 0.8);
+  border-color: rgba(209, 213, 219, 0.8);
+}
+
+.light .timeline-icon svg {
+  color: #6b7280 !important;
+}
+
+.light .timeline-item:hover .timeline-icon {
+  background: #e5e7eb;
+}
+
+.light .timeline-item:hover .timeline-icon svg {
+  color: #0891b2 !important;
+}
+
+/* Timeline Content */
+.timeline-content {
+  padding-left: 0;
+}
+
+/* Timeline Title - Matching Hero Title */
+.timeline-title {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.2 !important;
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .timeline-title {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-title {
+    font-size: 2rem !important;
+  }
+}
+
+.light .timeline-title {
+  color: #111827 !important;
+}
+
+/* Timeline Company - Matching Hero Subtitle */
+.timeline-company,
+.timeline-subtitle {
+  font-size: 1.125rem !important;
+  color: #22d3ee !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .timeline-company,
+  .timeline-subtitle {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-company,
+  .timeline-subtitle {
+    font-size: 1.375rem !important;
+  }
+}
+
+.light .timeline-company,
+.light .timeline-subtitle {
+  color: #0891b2 !important;
+}
+
+/* Timeline Date - Matching Hero Contact Info */
+.timeline-date {
+  font-size: 0.875rem !important;
+  color: #9ca3af !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 400 !important;
+  display: inline-block !important;
+}
+
+@media (min-width: 640px) {
+  .timeline-date {
+    font-size: 0.9375rem !important;
+  }
+}
+
+.light .timeline-date {
+  color: #6b7280 !important;
+}
+
+/* Timeline Description - Matching Hero Description */
+.timeline-description {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: #d1d5db !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 400 !important;
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .timeline-description {
+    font-size: 1.125rem !important;
+  }
+}
+
+.light .timeline-description {
+  color: #4b5563 !important;
+}
+
+/* Timeline Achievements */
+.timeline-achievements {
+  margin-top: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid rgba(71, 85, 105, 0.5) !important;
+  display: block !important;
+}
+
+.light .timeline-achievements {
+  border-top-color: rgba(209, 213, 219, 0.8) !important;
+}
+
+.timeline-achievements h4 {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+}
+
+.light .timeline-achievements h4 {
+  color: #111827 !important;
+}
+
+.timeline-achievements ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.timeline-achievements li {
+  position: relative !important;
+  padding-left: 1.75rem !important;
+  margin-bottom: 0.875rem !important;
+  color: #d1d5db !important;
+  line-height: 1.7 !important;
+  font-size: 1rem !important;
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .timeline-achievements li {
+    font-size: 1.0625rem !important;
+  }
+}
+
+.light .timeline-achievements li {
+  color: #4b5563 !important;
+}
+
+.timeline-achievements li::before {
+  content: "▸" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: #22d3ee !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+}
+
+.light .timeline-achievements li::before {
+  color: #0891b2 !important;
+}
+
+/* Timeline Line */
+.timeline-line {
+  position: absolute;
+  left: 1.75rem;
+  top: 100%;
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, 
+    rgba(34, 211, 238, 0.5) 0%, 
+    rgba(34, 211, 238, 0.2) 50%,
+    rgba(34, 211, 238, 0) 100%);
+}
+
+/* Responsive Design - Matching Hero Breakpoints */
+@media (max-width: 479px) {
+  .timeline-item {
+    padding: 1.5rem;
+  }
+
+  .timeline-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .timeline-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .timeline-title {
+    font-size: 1.25rem !important;
+  }
+
+  .timeline-company,
+  .timeline-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .timeline-description {
+    font-size: 0.9375rem !important;
+  }
+
+  .timeline-achievements li {
+    font-size: 0.9375rem !important;
+  }
+
+  .timeline-line {
+    left: 1.5rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .timeline-item {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-item {
+    padding: 2rem;
+  }
+}
+
+/* Animations - Matching Hero */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-item-wrapper {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Stagger Animation - Matching Hero */
+.timeline-item-wrapper:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.timeline-item-wrapper:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item-wrapper:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item-wrapper:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.timeline-item-wrapper:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Accessibility - Matching Hero */
+.timeline-item:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 4px;
+  border-radius: 1rem;
+}
+
+/* Reduced Motion - Matching Hero */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .timeline-item-wrapper {
+    animation: none !important;
+  }
+
+  .timeline-item:hover,
+  .timeline-icon:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast - Matching Hero */
+@media (prefers-contrast: high) {
+  .timeline-item {
+    border-width: 3px;
+  }
+
+  .timeline-icon {
+    border-width: 3px;
+  }
+}
+
+/* Print Styles - Matching Hero */
+@media print {
+  .timeline-item {
+    page-break-inside: avoid;
+    border: 2px solid black;
+  }
+
+  .timeline-icon {
+    display: none !important;
+  }
+
+  .timeline-line {
+    display: none !important;
+  }
+}
+
+/* Ensure all text is always visible - CRITICAL */
+.timeline-item * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Additional fallback for text elements */
+.timeline-item h1,
+.timeline-item h2,
+.timeline-item h3,
+.timeline-item h4,
+.timeline-item h5,
+.timeline-item h6,
+.timeline-item p,
+.timeline-item span,
+.timeline-item li {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.timeline-item span {
+  display: inline !important;
+}
+
+/* Ensure proper display */
+.timeline-item .timeline-content {
+  display: block !important;
+}
+
+.timeline-item .timeline-achievements {
+  display: block !important;
+}
+
+.timeline-item .timeline-achievements ul {
+  display: block !important;
+}
