@@ -4,9 +4,9 @@
   "description": "Professional portfolio website for Vaibhav Vaidya - Full Stack Developer",
   "type": "module",
   "scripts": {
-  "dev": "npx vite",
-  "build": "npx vite build",
-  "preview": "npx vite preview"
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
 },
   "dependencies": {
     "bootstrap": "^5.3.8",
