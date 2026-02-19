@@ -4,11 +4,10 @@
   "description": "Professional portfolio website for Vaibhav Vaidya - Full Stack Developer",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "npx vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
-  },
+  "dev": "npx vite",
+  "build": "npx vite build",
+  "preview": "npx vite preview"
+},
   "dependencies": {
     "bootstrap": "^5.3.8",
     "framer-motion": "^11.18.2",
