@@ -514,4 +514,18 @@
   nav {
     display: none;
   }
+  /* Prevent logo overlap on mobile */
+@media (max-width: 768px) {
+  .navbar-logo-wrapper {
+    max-width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+  }
+
+  .navbar-mobile-controls {
+    flex-shrink: 0;
+  }
+}
 }
