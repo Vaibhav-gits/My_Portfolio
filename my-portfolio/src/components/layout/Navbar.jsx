@@ -14,8 +14,7 @@ const Navbar = () => {
       if (typeof window !== "undefined" && window.matchMedia) {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
       }
-    } catch (e) {
-    }
+    } catch (e) {}
     return false;
   });
 
@@ -32,16 +31,13 @@ const Navbar = () => {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("darkMode", "false");
       }
-    } catch (e) {
-    }
+    } catch (e) {}
   }, [darkMode]);
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode((prev) => !prev);
   };
 
-  // Hide/show navbar on scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 150) {
@@ -50,7 +46,6 @@ const Navbar = () => {
       setHidden(false);
     }
 
-    // Add backdrop blur when scrolled
     setScrolled(latest > 50);
   });
 
@@ -68,14 +63,45 @@ const Navbar = () => {
     e.preventDefault();
     setIsOpen(false);
 
-    const element = document.querySelector(href);
+    const id = href && href.startsWith("#") ? href.slice(1) : href;
+    let element = null;
+    try {
+      if (id)
+        element = document.getElementById(id) || document.querySelector(href);
+    } catch (err) {
+      element = document.querySelector(href);
+    }
+
     if (element) {
       const offset = 80;
-      const elementPosition = element.offsetTop - offset;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      });
+      const rect = element.getBoundingClientRect();
+      const elementPosition = rect.top + window.pageYOffset - offset;
+
+      try {
+        window.scrollTo({ top: elementPosition, behavior: "smooth" });
+      } catch (err) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      if (process.env.NODE_ENV !== "production") {
+        console.debug("Navbar: scrolling to", id, elementPosition);
+      }
+
+      setTimeout(() => {
+        const currentY =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (Math.abs(currentY - elementPosition) > 20) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 600);
+
+      if (history && history.replaceState) {
+        history.replaceState(null, "", `#${id}`);
+      }
+    } else {
+      if (href) {
+        window.location.hash = href;
+      }
     }
   };
 

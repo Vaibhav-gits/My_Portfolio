@@ -1,0 +1,79 @@
+/* ScrollToTop indicator + button styles */
+:root {
+  --scroll-indicator-width: 10px;
+  --scroll-indicator-height: 150px;
+  --indicator-track: rgba(0, 0, 0, 0.06);
+  --indicator-thumb: rgba(100, 100, 100, 0.6);
+  --indicator-thumb-hover: rgba(100, 100, 100, 0.8);
+}
+
+.scroll-indicator {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* legacy vertical track (no longer used for bottom-right circular) */
+.scroll-track,
+.scroll-thumb {
+  display: none;
+}
+
+.scroll-to-top.circular {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.progress-ring {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+
+.progress-ring .ring-bg {
+  opacity: 1;
+}
+
+.arrow-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.arrow-icon svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(30, 30, 30, 0.95);
+}
+
+.scroll-to-top:hover .scroll-thumb,
+.scroll-to-top:hover {
+  /* subtle hover effect */
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
