@@ -40,7 +40,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch("https://vaibhav-vaidya.vercel.app", {
+   const response = await fetch("/api/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
