@@ -163,7 +163,7 @@ const Navbar = () => {
 
               {/* Resume Download Button */}
               <motion.a
-                href="/assets/resume/Vaibhav_Vaidya_Resume.pdf"
+                href="/assets/resume/Vaibhav Resume CV.pdf"
                 download
                 className="navbar-resume-btn"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -259,7 +259,7 @@ const Navbar = () => {
 
             {/* Mobile Resume Button */}
             <motion.a
-              href="/assets/resume/Vaibhav_Vaidya_Resume.pdf"
+              href="/assets/resume/Vaibhav Resume CV.pdf"
               download
               className="navbar-mobile-resume"
               initial={{ y: 20, opacity: 0 }}
