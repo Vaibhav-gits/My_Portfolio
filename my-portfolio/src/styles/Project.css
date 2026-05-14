@@ -255,6 +255,69 @@
   justify-content: center;
   padding-bottom: 2rem;
 }
+/* ===== BUDDYWALK SPECIAL IMAGE CONTAINER ===== */
+.projects-image-container.is-app-icon {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  transition: border-color 0.3s ease;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animated glow background for app icon */
+.projects-image-container.is-app-icon::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.4), transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: buddyPulse 3s ease-in-out infinite;
+}
+
+@keyframes buddyPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50%       { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+
+/* The icon itself */
+.projects-image-container.is-app-icon .projects-image {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 2rem;
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(20, 184, 166, 0.3);
+}
+
+/* Decorative floating dots */
+.projects-image-container.is-app-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Keep hover overlay working */
+.projects-image-container.is-app-icon:hover {
+  border-color: rgba(20, 184, 166, 0.5);
+}
 
 .projects-project-image:hover .projects-hover-overlay {
   opacity: 1;

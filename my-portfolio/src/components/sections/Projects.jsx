@@ -6,6 +6,7 @@ import {
   FiCode,
   FiLayers,
   FiZap,
+  FiSmartphone,
 } from "react-icons/fi";
 import {
   SiReact,
@@ -18,8 +19,10 @@ import {
   SiOpencv,
   SiHtml5,
   SiCss3,
+  SiNodedotjs,
+  SiDigitalocean,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaGooglePlay } from "react-icons/fa";
 import "../../styles/Project.css";
 
 const Projects = () => {
@@ -67,6 +70,7 @@ const Projects = () => {
         "https://github.com/Vaibhav-gits/AI-Driven-Helmet-and-seatbelt-detection-System",
       demo: "#",
       color: "from-blue-500 to-cyan-500",
+      isPlayStore: false,
     },
     {
       id: 2,
@@ -105,6 +109,36 @@ const Projects = () => {
       github: "https://github.com/Vaibhav-gits/Student_Management_System",
       demo: "#",
       color: "from-green-500 to-emerald-500",
+      isPlayStore: false,
+    },
+    {
+      id: 3,
+      title: "BuddyWalk – Group Steps Counter",
+      description:
+        "A social fitness app built with React Native & Node.js that lets users create walking groups, track daily steps, and compete on leaderboards. ",
+      category: "Mobile App",
+      image: "/assets/images/icon-Photoroom.png",
+      playStoreBadgeColor: "from-green-400 to-teal-500",
+      tags: ["React Native", "Node.js", "DigitalOcean", "PM2", "Nginx"],
+      techStack: [
+        { name: "React Native", icon: SiReact, color: "#61DAFB" },
+        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "DigitalOcean", icon: SiDigitalocean, color: "#0080FF" },
+      ],
+      features: [
+        "Group walking challenges & leaderboards",
+        "Real-time step tracking via smartphone sensors",
+        "In-app push notifications",
+        "Badges, awards & weekly winners",
+        "Premium ad-free subscription",
+      ],
+      // ✅ Code button = BuddyWalk Play Store
+      github:
+        "https://play.google.com/store/apps/details?id=com.radicalapp.buddywalk",
+      // ✅ Demo button = Peccular all apps
+      demo: "https://play.google.com/store/apps/developer?id=Peccular",
+      color: "from-teal-500 to-green-500",
+      isPlayStore: false, // keeps original card layout with hover buttons
     },
   ];
 
@@ -168,20 +202,17 @@ const Projects = () => {
               variants={projectVariants}
               className={`projects-project-item ${index % 2 === 1 ? "projects-project-reverse" : ""}`}
             >
-              {/* Project Image */}
+              {/* Project Image / Play Store Card */}
               <motion.div
                 className={`projects-project-image ${index % 2 === 1 ? "projects-project-image-reverse" : ""}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Image Container */}
-                <div className="projects-image-container">
-                  {/* Gradient Overlay */}
+                <div className={`projects-image-container ${project.id === 3 ? 'is-app-icon' : ''}`}>
                   <div
                     className={`projects-image-overlay projects-image-overlay-${project.id}`}
                   ></div>
 
-                  {/* Project image (renders from public/assets/images) */}
                   <img
                     src={project.image}
                     alt={project.title}
@@ -199,8 +230,8 @@ const Projects = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <FiGithub />
-                        Code
+                        {project.id === 3 ? <FaGooglePlay /> : <FiGithub />}
+                        {project.id === 3 ? "Play Store" : "Code"}
                       </motion.a>
                       {project.demo !== "#" && (
                         <motion.a
@@ -212,7 +243,7 @@ const Projects = () => {
                           whileTap={{ scale: 0.95 }}
                         >
                           <FiExternalLink />
-                          Demo
+                          {project.id === 3 ? "Other Apps" : "Demo"}
                         </motion.a>
                       )}
                     </div>
@@ -243,9 +274,6 @@ const Projects = () => {
                   </motion.h3>
                   <p className="projects-project-description">
                     {project.description}
-                  </p>
-                  <p className="projects-project-long-description">
-                    {project.longDescription}
                   </p>
                 </div>
 
@@ -300,10 +328,20 @@ const Projects = () => {
                     className="projects-btn-view-code"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
                   >
-                    <FiGithub />
-                    View Code
+                    {project.id === 3 ? (
+                      <FaGooglePlay size={15} />
+                    ) : (
+                      <FiGithub />
+                    )}
+                    {project.id === 3 ? "View on Play Store" : "View Code"}
                   </motion.a>
+
                   {project.demo !== "#" && (
                     <motion.a
                       href={project.demo}
@@ -312,9 +350,14 @@ const Projects = () => {
                       className={`projects-btn-live-demo projects-btn-live-demo-${project.id}`}
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                      }}
                     >
                       <FiExternalLink />
-                      Live Demo
+                      {project.id === 3 ? "Other Apps" : "Live Demo"}
                     </motion.a>
                   )}
                 </div>

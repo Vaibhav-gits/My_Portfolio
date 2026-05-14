@@ -12,11 +12,6 @@ export const socialLinks = [
     icon: FiLinkedin,
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/vaibhav_vaidya",
-    icon: FiTwitter,
-  },
-  {
     name: "Email",
     url: "mailto:vaibhav@example.com",
     icon: FiMail,

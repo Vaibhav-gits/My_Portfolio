@@ -101,7 +101,7 @@ const About = () => {
           <motion.div variants={itemVariants} className="about-story-section">
             {/* Introduction */}
             <div className="about-introduction">
-              I’m an aspiring <strong>Full Stack Developer</strong> currently
+              I’m an aspiring <strong>Full Stack Developer and Mobile App Developer</strong> currently
               pursuing a B.Tech in Computer Engineering, with hands-on
               experience building modern web and mobile applications. I enjoy
               turning ideas into scalable, real-world solutions and working
